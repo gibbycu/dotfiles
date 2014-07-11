@@ -1,0 +1,2 @@
+# Load cool command prompt
+source ~/dotfiles/bash/source/command_prompt.sh
