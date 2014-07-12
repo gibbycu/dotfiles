@@ -5,11 +5,13 @@ set nocompatible
 autocmd! bufwritepost vimrc source ~/_vimrc
 
 "source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
-execute pathogen#infect('bundle/{}', '~/dotfiles/vim/vimfiles/bundle/{}')
-"call pathogen#helptags()
+filetype off
+"execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
+call pathogen#infect()
+call pathogen#helptags()
 
 " Mouse and backspace
 set mouse=a 
@@ -30,7 +32,6 @@ colors nature
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
-filetype off
 filetype plugin indent on
 syntax on
 

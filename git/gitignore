@@ -12,4 +12,4 @@
 
 # vim files
 _viminfo
-.netrw*
+.netrwhist
