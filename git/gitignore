@@ -1,0 +1,15 @@
+# log files
+*.log
+
+# python files
+*.pyc
+*.egg-info/
+
+# eclipse files
+.metadata
+.project
+*.pydevproject
+
+# vim files
+_viminfo
+.netrw*

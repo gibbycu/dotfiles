@@ -4,6 +4,9 @@ mklink c:\Users\mdg\.bashrc c:\Users\mdg\dotfiles\bash\bashrc
 del c:\Users\mdg\.gitconfig
 mklink c:\Users\mdg\.gitconfig c:\Users\mdg\dotfiles\git\gitconfig
 
+del c:\Users\mdg\.gitignore_global
+mklink c:\Users\mdg\.gitignore_global c:\Users\mdg\dotfiles\git\gitignore
+
 del c:\Users\mdg\.matplotlib\matplotlibrc
 mklink c:\Users\mdg\.matplotlib\matplotlibrc c:\Users\mdg\dotfiles\matplotlib\matplotlibrc
 
