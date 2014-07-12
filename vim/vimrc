@@ -11,6 +11,51 @@ autocmd! bufwritepost vimrc source ~/_vimrc
 execute pathogen#infect('bundle/{}', '~/dotfiles/vim/vimfiles/bundle/{}')
 "call pathogen#helptags()
 
+" Mouse and backspace
+set mouse=a 
+set bs=2 " make backspace behave like normal again
+set backspace=indent,eol,start  " make that backspace key work the way it should
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
+" Color scheme
+" mkdir -p ~/.vim/colors && cd ~/.vim/colors
+" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+"" set t_Co=256
+"" color wombat256mod
+
+" Enable syntax highlighting
+" You need to reload this file for the change to apply
+filetype off
+filetype plugin indent on
+syntax on
+
+" Showing line numbers and length
+set number " show line numbers
+set tw=80 " width of document (used by gd)
+set wrap
+" "" set nowrap " don't automatically wrap on load
+" "" set fo-=t " don't automatically wrap text when typing
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+" Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" Disable stupid backup and swap files - they trigger too many events
+" for file system watchers
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Setting some decent VIM settings for programming from git install
 
 set ai                          " set auto-indenting on for programming
@@ -18,10 +63,8 @@ set showmatch                   " automatically show matching brackets. works li
 set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
 set ruler                       " show the cursor position all the time
 set laststatus=2                " make the last line where the status is two lines deep so you can see status always
-set backspace=indent,eol,start  " make that backspace key work the way it should
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
 set showmode                    " show the current mode
-syntax on                       " turn syntax highlighting on by default
 
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
