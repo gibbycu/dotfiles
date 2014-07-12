@@ -1,6 +1,9 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost vimrc source ~/_vimrc
+
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
