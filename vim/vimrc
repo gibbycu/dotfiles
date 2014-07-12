@@ -25,8 +25,8 @@ vnoremap > >gv " better indentation
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-"" set t_Co=256
-"" color wombat256mod
+"set t_Co=256
+colors nature
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
@@ -36,12 +36,13 @@ syntax on
 
 " Showing line numbers and length
 set number " show line numbers
-set tw=80 " width of document (used by gd)
+" set tw=80 " width of document (used by gd)
 set wrap
+set linebreak
 " "" set nowrap " don't automatically wrap on load
 " "" set fo-=t " don't automatically wrap text when typing
-set colorcolumn=80
-highlight ColorColumn ctermbg=233
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=233
 
 " Real programmers don't use TABs but spaces
 set tabstop=4
