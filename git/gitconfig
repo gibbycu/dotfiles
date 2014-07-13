@@ -3,3 +3,5 @@
 	email = gibbycu@gmail.com
 [push]
 	default = simple
+[core]
+	excludesfile = c:/Users/mdg/.gitignore_global
