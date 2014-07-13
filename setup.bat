@@ -15,6 +15,3 @@ mklink c:\Users\mdg\_vimrc c:\Users\mdg\dotfiles\vim\vimrc
 
 rmdir c:\Users\mdg\vimfiles
 mklink /d c:\Users\mdg\vimfiles c:\Users\mdg\dotfiles\vim\vimfiles
-
-del C:\Far\ConEmu\ConEmu.xml
-mklink C:\Far\ConEmu\ConEmu.xml c:\Users\mdg\dotfiles\conemu\ConEmu.xml
