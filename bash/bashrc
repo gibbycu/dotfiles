@@ -1,9 +1,7 @@
-# Load cool command prompt
-source ~/dotfiles/bash/source/command_prompt.sh
-
 # Some repository aliases
 alias gitdot='cd ~/dotfiles'
 alias gitphd='cd ~/repos/phd'
+alias gitdoc='cd ~/repos/phd/thesis/doc'
 alias gitsw='cd ~/repos/shanwilpy'
 
 # Control ls command  
@@ -43,31 +41,37 @@ function start_agent {
     echo $SSH_ENV
     }
 
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-    start_agent;
+function check_ssh {
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+        }
+        else
+        start_agent;
+        fi
     }
-    else
-    start_agent;
-    fi
 
 # cygwin settings
 if [[ $CYG_SYS_BASHRC = 1 ]]; then
-    # Control grep command
-    echo 'Loading cygwin specific scripts'
-    ## Colorize the grep command output for ease of use (good for log files)##
-    alias grep='grep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias fgrep='fgrep --color=auto'
-#
-#    # Since we are using git from MSYSGIT, load some of their scripts
-#    STR=""
-#    case $HOME in 
-#        "/cygdrive"*) STR="/cygdrive";
-#    esac
-#    
-#    source $STR/c/Git/etc/git-completion.bash;
+        echo 'Loading cygwin specific scripts'
+        
+        # Control grep command
+        ## Colorize the grep command output for ease of use (good for log files)##
+        alias grep='grep --color=auto'
+        alias egrep='egrep --color=auto'
+        alias fgrep='fgrep --color=auto'
+        # TODO list
+        alias todo='gitdoc; grep -rnH --include="*.tex" TODO *';
+    
+    else
+    
+        echo 'Loading git bash specific scripts'    
+    
+        # Load cool command prompt
+        source ~/dotfiles/bash/source/command_prompt.sh
+        
+        check_ssh;
     fi
 
 

@@ -1,11 +1,11 @@
-del c:\Users\mdg\.bashrc
-mklink c:\Users\mdg\.bashrc c:\Users\mdg\dotfiles\bash\bashrc
+rem del c:\Users\mdg\.bashrc
+rem mklink c:\Users\mdg\.bashrc c:\Users\mdg\dotfiles\bash\bashrc
 
-del c:\Users\mdg\.profile
-mklink c:\Users\mdg\.profile c:\Users\mdg\dotfiles\bash\bashrc
+rem del c:\Users\mdg\.profile
+rem mklink c:\Users\mdg\.profile c:\Users\mdg\dotfiles\bash\bashrc
 
-del c:\Users\mdg\.bash_profile
-mklink c:\Users\mdg\.bash_profile c:\Users\mdg\dotfiles\bash\bashrc
+del c:\Users\mdg\.bash_login
+mklink c:\Users\mdg\.bash_login c:\Users\mdg\dotfiles\bash\bashrc
 
 del c:\Users\mdg\.gitconfig
 mklink c:\Users\mdg\.gitconfig c:\Users\mdg\dotfiles\git\gitconfig
