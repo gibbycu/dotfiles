@@ -35,11 +35,12 @@ SSH_ENV=$HOME/.ssh/environment
 function start_agent {
     echo "Initializing new SSH agent..."
     # spawn ssh-agent
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    /usr/bin/ssh-agent -s | sed 's/^echo/#echo/' > "${SSH_ENV}"
     echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add
+    echo $SSH_ENV
     }
 
 if [ -f "${SSH_ENV}" ]; then
@@ -59,9 +60,14 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
-
-    # Since we are using git from MSYSGIT, load some of their scripts
-    source /c/Git/etc/git-completion.bash;
+#
+#    # Since we are using git from MSYSGIT, load some of their scripts
+#    STR=""
+#    case $HOME in 
+#        "/cygdrive"*) STR="/cygdrive";
+#    esac
+#    
+#    source $STR/c/Git/etc/git-completion.bash;
     fi
 
 
