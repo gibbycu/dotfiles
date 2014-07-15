@@ -5,3 +5,10 @@
 	default = simple
 [core]
 	excludesfile = c:/Users/mdg/.gitignore_global
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
