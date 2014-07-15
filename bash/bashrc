@@ -27,12 +27,6 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
-# Control grep command
-## Colorize the grep command output for ease of use (good for log files)##
-#alias grep='grep --color=auto'
-#alias egrep='egrep --color=auto'
-#alias fgrep='fgrep --color=auto'
-
 
 # settings for ssh key agent
 SSH_ENV=$HOME/.ssh/environment
@@ -56,3 +50,18 @@ if [ -f "${SSH_ENV}" ]; then
     else
     start_agent;
     fi
+
+# cygwin settings
+if [[ $CYG_SYS_BASHRC = 1 ]]; then
+    # Control grep command
+    echo 'Loading cygwin specific scripts'
+    ## Colorize the grep command output for ease of use (good for log files)##
+    alias grep='grep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+
+    # Since we are using git from MSYSGIT, load some of their scripts
+    source /c/Git/etc/git-completion.bash;
+    fi
+
+
