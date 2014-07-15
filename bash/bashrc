@@ -61,8 +61,9 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
         alias grep='grep --color=auto'
         alias egrep='egrep --color=auto'
         alias fgrep='fgrep --color=auto'
+
         # TODO list
-        alias todo='gitdoc; grep -rnH --include="*.tex" TODO *';
+        todo() { gitdoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto 'TODO' /dev/null; };
     
     else
     
