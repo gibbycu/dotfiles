@@ -2,7 +2,7 @@
 	name = Matt Gibson
 	email = gibbycu@gmail.com
 [push]
-	default = simple
+	default = matching
 [core]
 	excludesfile = c:/Users/mdg/.gitignore_global
 [alias]
