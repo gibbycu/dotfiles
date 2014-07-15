@@ -1,6 +1,12 @@
 del c:\Users\mdg\.bashrc
 mklink c:\Users\mdg\.bashrc c:\Users\mdg\dotfiles\bash\bashrc
 
+del c:\Users\mdg\.profile
+mklink c:\Users\mdg\.profile c:\Users\mdg\dotfiles\bash\bashrc
+
+del c:\Users\mdg\.bash_profile
+mklink c:\Users\mdg\.bash_profile c:\Users\mdg\dotfiles\bash\bashrc
+
 del c:\Users\mdg\.gitconfig
 mklink c:\Users\mdg\.gitconfig c:\Users\mdg\dotfiles\git\gitconfig
 
@@ -15,3 +21,7 @@ mklink c:\Users\mdg\_vimrc c:\Users\mdg\dotfiles\vim\vimrc
 
 rmdir c:\Users\mdg\vimfiles
 mklink /d c:\Users\mdg\vimfiles c:\Users\mdg\dotfiles\vim\vimfiles
+
+rmdir c:\cygwin\home\MDG
+mklink /d c:\cygwin\home\MDG c:\Users\mdg
+pause
