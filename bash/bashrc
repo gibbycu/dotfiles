@@ -47,5 +47,5 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
 source ~/dotfiles/bash/source/command_prompt.sh
 
 # ssh-agent script
-source ~/dotfiles/bash/source/sshag.sh; sshag &>/dev/null
-
+source ~/dotfiles/bash/source/sshag.sh 
+sshag
