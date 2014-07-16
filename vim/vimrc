@@ -28,12 +28,16 @@ vnoremap > >gv " better indentation
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 "set t_Co=256
-colors nature
+colors candy
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype plugin indent on
 syntax on
+
+" folding options
+set foldmethod=syntax
+set foldlevelstart=1
 
 " Showing line numbers and length
 set number " show line numbers
@@ -73,7 +77,7 @@ set showmode                    " show the current mode
 imap jj <esc>
 
 " save is typical save
-
+map upa :execute ':bufdo! update'<CR>
 
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
