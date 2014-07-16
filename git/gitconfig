@@ -5,6 +5,13 @@
 	default = matching
 [core]
 	excludesfile = c:/Users/mdg/.gitignore_global
+   	symlinks = false
+	autocrlf = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = true
 [alias]
     st = status
     ci = commit
@@ -12,3 +19,16 @@
     co = checkout
     df = diff
     lg = log -p
+[pack]
+	packSizeLimit = 2g
+[help]
+	format = html
+[http]
+	sslCAinfo = /bin/curl-ca-bundle.crt
+[sendemail]
+	smtpserver = /bin/msmtp.exe
+
+[diff "astextplain"]
+	textconv = astextplain
+[rebase]
+	autosquash = true
