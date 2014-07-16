@@ -3,7 +3,9 @@
 # http://superuser.com/questions/141044/sharing-the-same-ssh-agent-among-multiple-login-sessions#answer-141241
 
 function sshag_findsockets {
-    find /tmp -uid $(id -u) -type s -name agent.\* 2>/dev/null
+    # mdg modified this search because cygwin produces files with dos line endings
+    # and changed /tmp to $TEMP
+    find $TEMP -uid $(id -u) -name agent.\* 2>/dev/null
 }
 
 function sshag_testsocket {
@@ -20,7 +22,8 @@ function sshag_testsocket {
         return 2
     fi
 
-    if [ -S $SSH_AUTH_SOCK ] ; then
+    # mdg commented out for same reason above
+    #if [ -b $SSH_AUTH_SOCK ] ; then
         ssh-add -l > /dev/null
         if [ $? = 2 ] ; then
             echo "Socket $SSH_AUTH_SOCK is dead!  Deleting!" >&2
@@ -29,10 +32,10 @@ function sshag_testsocket {
         else
             return 0
         fi
-    else
-        echo "$SSH_AUTH_SOCK is not a socket!" >&2
-        return 3
-    fi
+    #else
+    #   echo "$SSH_AUTH_SOCK is not a socket!" >&2
+    #   return 3
+    #fi
 }
 
 function sshag_init {
@@ -49,25 +52,30 @@ function sshag_init {
     # process.
     if [ $AGENTFOUND = 0 ] ; then
         for agentsocket in $(sshag_findsockets) ; do
+            #echo $agentsocket
             if [ $AGENTFOUND != 0 ] ; then break ; fi
-            if sshag_testsocket $agentsocket ; then AGENTFOUND=1 ; fi
+            if sshag_testsocket $agentsocket ; then 
+                AGENTFOUND=1 ; fi
         done
     fi
 
     # If at this point we still haven't located an agent, it's time to
     # start a new one
     if [ $AGENTFOUND = 0 ] ; then
+        echo "starting ssh agent"
         eval `ssh-agent`
+        #ssh-add
     fi
 
     # Clean up
     unset AGENTFOUND
     unset agentsocket
 
-    { echo "Keys:";  ssh-add -l | sed 's/^/    /'; } >&2
+    #{ echo "Keys:";  ssh-add -l | sed 's/^/    /'; } >&2
 
     # Display the found socket
-    echo $SSH_AUTH_SOCK;
+    
+    #echo $SSH_AUTH_SOCK;
 }
 
 
@@ -78,7 +86,7 @@ if [[ $0 == sshag ]]; then
     sshag_init
 # Otherwise, make it convenient to invoke the search.
 # When the alias is invoked, it will modify the shell environment.
+
 else
     alias sshag="sshag_init"
 fi
-
