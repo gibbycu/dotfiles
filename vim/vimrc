@@ -41,6 +41,9 @@ set fileformats=unix,dos
 " set so that vim-latex works
 let g:tex_flavor='latex'
 
+" set magic so search is like regular expressions
+set magic
+
 " folding options
 set foldmethod=syntax
 set foldlevelstart=1
