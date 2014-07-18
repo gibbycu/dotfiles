@@ -34,6 +34,13 @@ colors solarized
 filetype plugin indent on
 syntax on
 
+" settings to produce unix format files
+set fileformat=unix
+set fileformats=unix,dos
+
+" set so that vim-latex works
+let g:tex_flavor='latex'
+
 " folding options
 set foldmethod=syntax
 set foldlevelstart=1
