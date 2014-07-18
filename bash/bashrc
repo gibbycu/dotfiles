@@ -1,8 +1,8 @@
 # Some repository aliases
-alias gitdot='cd ~/dotfiles'
-alias gitphd='cd ~/repos/phd'
-alias gitdoc='cd ~/repos/phd/thesis/doc'
-alias gitsw='cd ~/repos/shanwilpy'
+alias cddot='cd ~/dotfiles'
+alias cdphd='cd ~/repos/phd'
+alias cddoc='cd ~/repos/phd/thesis/doc'
+alias cdsw='cd ~/repos/shanwilpy/src/shanwilpy'
 
 # Control ls command  
 ## Colorize the ls output ##
