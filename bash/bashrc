@@ -39,7 +39,7 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
         alias fgrep='fgrep --color=auto'
 
         # TODO list
-        todo() { gitdoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'TODO' /dev/null; };
+        todo() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'TODO' /dev/null; };
     
     fi
 
