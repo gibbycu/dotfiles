@@ -2,7 +2,7 @@
 set nocompatible
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost vimrc source ~/_vimrc
+autocmd! bufwritepost vimrc source ~/dotfiles/vim/vimrc
 
 "source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -17,12 +17,6 @@ call pathogen#helptags()
 set mouse=a 
 set bs=2 " make backspace behave like normal again
 set backspace=indent,eol,start  " make that backspace key work the way it should
-
-" easier moving of code blocks
-" Try to go into visual mode (v), thenselect several lines of code here and
-" then press ``>`` several times.
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
 
 " Color scheme
 "set t_Co=256
@@ -82,11 +76,26 @@ set laststatus=2                " make the last line where the status is two lin
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
 set showmode                    " show the current mode
 
+" set leader key
+let mapleader = ","
+
+" change to current working directory
+map <Leader>cwd :execute ':cd %:p:h'<CR>
+
 " Escape quickly with jj
 imap jj <esc>
 
 " save is typical save
 map upa :execute ':bufdo! update'<CR>
+
+" nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
 
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
