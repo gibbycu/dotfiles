@@ -79,6 +79,10 @@ set showmode                    " show the current mode
 " set leader key
 let mapleader = ","
 
+" insert lines without entering insert mode
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
 " change to current working directory
 map <Leader>cwd :execute ':cd %:p:h'<CR>
 
@@ -105,6 +109,7 @@ set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(ex
 if has("autocmd")
     "Set UTF-8 as the default encoding for commit messages
     autocmd BufReadPre COMMIT_EDITMSG,git-rebase-todo setlocal fileencodings=utf-8
+    
 
     "Remember the positions in files with some git-specific exceptions"
     autocmd BufReadPost *
