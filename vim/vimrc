@@ -28,6 +28,10 @@ colors solarized
 filetype plugin indent on
 syntax on
 
+" setting for python completion
+" autocmd FileType python set completefunc=pythoncomplete#Complete
+" autocmd FileType python inoremap <Tab> <C-x><C-o>
+
 " settings to produce unix format files
 set fileformat=unix
 set fileformats=unix,dos
