@@ -10,3 +10,6 @@
 [submodule "vim/vimfiles/vim-latex-vim-latex"]
 	path = vim/vimfiles/vim-latex-vim-latex
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
+[submodule "vim/vimfiles/bundle/syntastic"]
+	path = vim/vimfiles/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
