@@ -28,3 +28,6 @@
 [submodule "vim/vimfiles/bundle/surround"]
 	path = vim/vimfiles/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/vimfiles/bundle/gundo"]
+	path = vim/vimfiles/bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git

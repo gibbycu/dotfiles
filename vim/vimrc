@@ -115,6 +115,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'vertical-split'
 
+" Gundo settings
+noremap <leader>g :GundoToggle<CR>
+
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
