@@ -34,3 +34,6 @@
 [submodule "vim/vimfiles/bundle/pep8"]
 	path = vim/vimfiles/bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
+[submodule "bundle/pydocstring"]
+	path = bundle/pydocstring
+	url = https://github.com/heavenshell/vim-pydocstring.git
