@@ -34,8 +34,8 @@ syntax on
 set hidden
 
 " setting for python completion
-" autocmd FileType python set completefunc=pythoncomplete#Complete
-" autocmd FileType python inoremap <Tab> <C-x><C-o>
+"autocmd FileType python set completefunc=pythoncomplete#Complete
+"autocmd FileType python inoremap <Tab> <C-x><C-o>
 
 " settings to produce unix format files
 set fileformat=unix
@@ -111,7 +111,9 @@ let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 " YCM settings
-let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_goto_buffer_command = 'vertical-split'
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
