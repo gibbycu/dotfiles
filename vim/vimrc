@@ -99,6 +99,12 @@ map upa :execute ':bufdo! update'<CR>
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
+" UltiSnips  settings to not conflict with YCM
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
