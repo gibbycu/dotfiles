@@ -118,6 +118,9 @@ let g:ycm_goto_buffer_command = 'vertical-split'
 " Gundo settings
 noremap <leader>g :GundoToggle<CR>
 
+" PEP8 settings
+let g:pep8_map='<leader>8'
+
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
