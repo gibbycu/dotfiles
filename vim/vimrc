@@ -9,6 +9,13 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 filetype off
+
+" UltiSnips  settings to not conflict with YCM
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsListSnippets = '<c-l>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
 "execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
 call pathogen#infect()
 call pathogen#helptags()
@@ -104,11 +111,8 @@ map upa :execute ':bufdo! update'<CR>
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
-" UltiSnips  settings to not conflict with YCM
-let g:UltiSnipsExpandTrigger = '<c-j>'
-let g:UltiSnipsListSnippets = '<c-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+" close buffer without closing window
+command! Bc :bn|:bd#
 
 " YCM settings
 " let g:ycm_autoclose_preview_window_after_completion = 0
