@@ -110,6 +110,7 @@ map upa :execute ':bufdo! update'<CR>
 
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1
 
 " close buffer without closing window
 command! Bc :bn|:bd#
