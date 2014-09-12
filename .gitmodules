@@ -32,6 +32,3 @@
 [submodule "vim/vimfiles/bundle/gundo"]
 	path = vim/vimfiles/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/vimfiles/bundle/flake8"]
-	path = vim/vimfiles/bundle/flake8
-	url = https://github.com/nvie/vim-flake8.git
