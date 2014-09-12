@@ -29,6 +29,15 @@ set backspace=indent,eol,start  " make that backspace key work the way it should
 "set t_Co=256
 "let g:solarized_termcolors=256
 colors solarized
+"
+" Syntastic settings
+let g:syntastic_mode_map = { "mode": "active",
+                            \ "active_filetypes": ["python", "latex"],
+                            \ "passive_filetypes": [] }
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_python_checkers = ["flake8", "pep8"]
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
@@ -123,14 +132,6 @@ let g:ycm_goto_buffer_command = 'vertical-split'
 " Gundo settings
 noremap <leader>g :GundoToggle<CR>
 
-" Syntastic settings
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_mode_map = { "mode": "active",
-                            \ "active_filetypes": ["python", "latex"],
-                            \ "passive_filetypes": ["puppet"] }
-let g:syntastic_python_checkers = ["flake8", "pep8"]
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
