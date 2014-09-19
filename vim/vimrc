@@ -19,6 +19,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 "execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
 call pathogen#infect()
 call pathogen#helptags()
+" let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'latex-box')
 
 " Mouse and backspace
 set mouse=a 
@@ -115,6 +117,9 @@ map <Leader>cwd :execute ':cd %:p:h'<CR>
 
 " Escape quickly with jj
 imap jj <esc>
+
+" space to insert space
+noremap <SPACE> i<SPACE><ESC>
 
 " save is typical save
 map upa :execute ':bufdo! update'<CR>
