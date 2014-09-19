@@ -62,8 +62,19 @@ set fileformat=unix
 set fileformats=unix,dos
 
 " set so that vim-latex works
-let g:tex_flavor='latex'
+" let g:tex_flavor='latex'
 
+" latex-box folding
+let g:LatexBox_Folding=1
+let g:LatexBox_fold_sections=[
+            \ "part",
+            \ "chapter",
+            \ "section",
+            \ "subsection",
+            \ "subsubsection",
+            \ "figure",
+            \ "table"]
+let g:LatexBox_complete_inlineMath = 1
 " set magic so search is like regular expressions
 set magic
 
@@ -123,6 +134,7 @@ noremap <SPACE> i<SPACE><ESC>
 
 " save is typical save
 map upa :execute ':bufdo! update'<CR>
+cmap W w
 
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
