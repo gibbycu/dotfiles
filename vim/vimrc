@@ -80,7 +80,7 @@ set magic
 
 " folding options
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=2
 
 " Showing line numbers and length
 set number " show line numbers
@@ -116,6 +116,9 @@ set laststatus=2                " make the last line where the status is two lin
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
 set showmode                    " show the current mode
 
+" set to files current directory
+autocmd BufEnter * silent! lcd %:p:h
+
 " set leader key
 let mapleader = ","
 
@@ -147,6 +150,12 @@ command! Bc :bn|:bd#
 " let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'vertical-split'
+" Do not display "Pattern not found" messages during YouCompleteMe completion
+" Patch: https://groups.google.com/forum/#!topic/vim_dev/WeBBjkXE8H8
+try
+  set shortmess+=c
+catch /E539: Illegal character/
+endtry
 
 " Gundo settings
 noremap <leader>g :GundoToggle<CR>
