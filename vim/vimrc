@@ -10,17 +10,17 @@ behave mswin
 
 filetype off
 
+"execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
+call pathogen#infect()
+call pathogen#helptags()
+" let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'latex-box')
 " UltiSnips  settings to not conflict with YCM
 let g:UltiSnipsExpandTrigger = '<c-j>'
 let g:UltiSnipsListSnippets = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
-"execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
-call pathogen#infect()
-call pathogen#helptags()
-" let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'latex-box')
 
 " Mouse and backspace
 set mouse=a 
@@ -64,6 +64,10 @@ set fileformats=unix,dos
 " set so that vim-latex works
 " let g:tex_flavor='latex'
 
+" allow underlines to be visible in conemu
+" http://superuser.com/questions/664130/conemu-solarized-color-scheme-not-displaying-properly-in-vim
+let g:solarized_underline=0
+
 " latex-box folding
 let g:LatexBox_Folding=1
 let g:LatexBox_fold_sections=[
@@ -75,6 +79,12 @@ let g:LatexBox_fold_sections=[
             \ "figure",
             \ "table"]
 let g:LatexBox_complete_inlineMath = 1
+
+" conceal characters
+set encoding=utf-8
+set conceallevel=2
+let g:tex_conceal= 'adgms'
+
 " set magic so search is like regular expressions
 set magic
 
@@ -162,6 +172,7 @@ noremap <leader>g :GundoToggle<CR>
 
 " for python testing or code execution
 noremap <silent> <leader>t :w<CR>:!cls & python %<CR>
+noremap <silent> <leader>f :w<CR>:!cls & autopep8 --in-place %<CR>
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
