@@ -32,3 +32,6 @@
 [submodule "vim/vimfiles/bundle/latex-box"]
 	path = vim/vimfiles/bundle/latex-box
 	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "vim/vimfiles/bundle/vim-fish"]
+	path = vim/vimfiles/bundle/vim-fish
+	url = git@github.com:gibbycu/vim-fish.git
