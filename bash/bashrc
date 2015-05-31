@@ -32,6 +32,7 @@ alias .5='cd ../../../../..'
 if [[ $CYG_SYS_BASHRC = 1 ]]; then
         echo 'Loading cygwin specific scripts'
         
+        export PATH=$PATH:/cygdrive/c/Mingw-w64/bin/
         # Control grep command
         ## Colorize the grep command output for ease of use (good for log files)##
         alias grep='grep --color=auto'
@@ -40,6 +41,8 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
 
         # TODO list
         todo() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'TODO' /dev/null; };
+        maybe() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'MAYBE' /dev/null; };
+        edit() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'EDIT' /dev/null; };
     
     fi
 
