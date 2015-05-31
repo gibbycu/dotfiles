@@ -2,7 +2,7 @@
 	name = Matt Gibson
 	email = gibbycu@gmail.com
 [push]
-	default = matching
+	default = simple
 [core]
 	excludesfile = c:/Users/mdg/.gitignore_global
    	symlinks = false
@@ -19,6 +19,7 @@
     co = checkout
     df = diff
     lg = log -p
+    wdiff = diff --color-words
 [pack]
 	packSizeLimit = 2g
 [help]
