@@ -39,6 +39,7 @@ if [[ $CYG_SYS_BASHRC = 1 ]]; then
         alias egrep='egrep --color=auto'
         alias fgrep='fgrep --color=auto'
 
+        findtxt() { find . -wholename "$1" -print | xargs grep --color=auto -n "$2" /dev/null; };
         # TODO list
         todo() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'TODO' /dev/null; };
         maybe() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'MAYBE' /dev/null; };
