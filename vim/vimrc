@@ -37,7 +37,7 @@ colors solarized
 " Syntastic settings
 let g:syntastic_mode_map = { "mode": "active",
                             \ "active_filetypes": ["python"],
-                            \ "passive_filetypes": ["tex"] }
+                            \ "passive_filetypes": ["rst","tex"] }
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_signs=1
@@ -64,7 +64,7 @@ set fileformat=unix
 set fileformats=unix,dos
 
 " set so that vim-latex works
-" let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 
 " allow underlines to be visible in conemu
 " http://superuser.com/questions/664130/conemu-solarized-color-scheme-not-displaying-properly-in-vim
@@ -134,8 +134,10 @@ set laststatus=2                " make the last line where the status is two lin
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
 set showmode                    " show the current mode
 
-" set to files current directory
-autocmd BufEnter * silent! lcd %:p:h
+" turn off scroll bars
+" this helps gvim from coming undocked and who needs scroll bars anyways
+set go-=r go-=R go-=l go-=L go+=b
+" set guioptions+=b guioptions-=e guioptions-=L " guioptions=grtb
 
 " set leader key
 let mapleader = ","
@@ -179,8 +181,13 @@ endtry
 noremap <leader>g :GundoToggle<CR>
 
 " for python testing or code execution
-noremap <silent> <leader>t :w<CR>:!cls & python %<CR>
+noremap <silent> <leader>t :w<CR>:!cls & activate swdev & python %<CR>
 noremap <silent> <leader>f :w<CR>:!cls & autopep8 --in-place %<CR>
+
+" quick build of a latex document
+noremap <silent> <leader>ba :w<CR>:!cls & lualatex %<CR><CR>
+noremap <silent> <leader>bt :w<CR>:!cls & C:/Users/mdg/repos/phd/thesis/doc/build.bat<CR><CR>
+noremap <silent> <leader>bts :w<CR>:!cls & C:/Users/mdg/repos/phd/thesis/doc/builds.bat<CR><CR>
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
@@ -199,6 +206,10 @@ if has("autocmd")
     
 
     "Remember the positions in files with some git-specific exceptions"
+
+    " set to files current directory
+    autocmd BufEnter * silent! lcd %:p:h
+
     autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$")
       \           && expand("%") !~ "COMMIT_EDITMSG"
