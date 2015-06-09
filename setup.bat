@@ -24,4 +24,7 @@ mklink /d c:\Users\mdg\vimfiles c:\Users\mdg\dotfiles\vim\vimfiles
 
 rmdir c:\cygwin\home\MDG
 mklink /d c:\cygwin\home\MDG c:\Users\mdg
+
+rmdir c:\msys32\home\MDG
+mklink /d c:\msys32\home\MDG c:\Users\mdg
 pause

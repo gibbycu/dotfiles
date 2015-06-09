@@ -25,9 +25,7 @@
 [help]
 	format = html
 [http]
-	sslCAinfo = /bin/curl-ca-bundle.crt
-[sendemail]
-	smtpserver = /bin/msmtp.exe
+	sslCAinfo = C:/msys32/usr/ssl/certs/ca-bundle.trust.crt
 
 [diff "astextplain"]
 	textconv = astextplain
