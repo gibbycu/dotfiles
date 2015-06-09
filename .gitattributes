@@ -1,2 +1,3 @@
 # keep the .bat in windows line endings
-*.bat text eol=crlf
+*.bat text=auto
+*.vim text=input 
