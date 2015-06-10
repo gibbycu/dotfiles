@@ -6,7 +6,7 @@
 [core]
 	excludesfile = c:/Users/mdg/.gitignore_global
    	symlinks = false
-	autocrlf = true
+	autocrlf = false
 [color]
 	diff = auto
 	status = auto
