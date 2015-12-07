@@ -32,7 +32,7 @@ alias .5='cd ../../../../..'
 if [[ $CYG_SYS_BASHRC = "1" || $MSYSTEM = "MSYS" ]]; then
         echo 'Loading advanced scripts'
         
-        export PATH=$PATH:/cygdrive/c/Mingw-w64/bin/
+        # export PATH=$PATH:/cygdrive/c/Mingw-w64/bin/
         # Control grep command
         ## Colorize the grep command output for ease of use (good for log files)##
         alias grep='grep --color=auto'
@@ -41,9 +41,9 @@ if [[ $CYG_SYS_BASHRC = "1" || $MSYSTEM = "MSYS" ]]; then
 
         findtxt() { find . -wholename "$1" -print | xargs grep --color=auto -n "$2" /dev/null; };
         # TODO list
-        todo() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'note{' /dev/null; };
-        maybe() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'MAYBE' /dev/null; };
-        edit() { cddoc; find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'EDIT' /dev/null; };
+        todo() { find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'note{' /dev/null; };
+        maybe() { find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'MAYBE' /dev/null; };
+        edit() { find . -wholename "*$1*.tex" -print | xargs grep --color=auto -n 'EDIT' /dev/null; };
     
     fi
 
