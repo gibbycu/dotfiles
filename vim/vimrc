@@ -9,7 +9,7 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 filetype off
-
+syntax off
 "execute pathogen#infect('bundle/{}', '~/vimfiles/bundle/{}')
 call pathogen#infect()
 call pathogen#helptags()
@@ -50,6 +50,10 @@ let g:syntastic_debug = 0
 filetype plugin indent on
 syntax on
 
+" if exists('loaded_tcomment')
+"     autocmd BufNewFile,BufRead,BufEnter *.enaml setfiletype enaml
+"     call tcomment#DefineType('enaml', '#.*$')
+" endif
 " allows you to deal with multiple unsaved
 " buffers simultaneously without resorting
 " to misusing tabs
@@ -187,18 +191,24 @@ try
 catch /E539: Illegal character/
 endtry
 
+" Ultisnips settings
+let g:UltiSnipsUsePythonVersion = 3
+
 " Gundo settings
 noremap <leader>g :GundoToggle<CR>
 
 " for python testing or code execution
-noremap <silent> <leader>t :w<CR>:!cls & activate swdev & python %<CR>
+noremap <silent> <leader>tsw :w<CR>:Dispatch activate swdev & python %<CR>
+noremap <silent> <leader>tg :w<CR>:Dispatch activate gwdbdev & python c:\users\mdg\repos\gwdb\runtests.py<CR>
+noremap <silent> <leader>tgc :w<CR>:Dispatch activate gwdbdev & coverage run %<CR>
+noremap <silent> <leader>tcc :w<CR>:Dispatch activate gwdbdev & coverage report<CR>
 noremap <silent> <leader>f :w<CR>:!cls & autopep8 --in-place %<CR>
 
 " quick build of a latex document
-noremap <silent> <leader>ba :w<CR>:!cls & latexmk -pdf %<CR>
-noremap <silent> <leader>bt :w<CR>:Make -C "C:/Users/mdg/repos/phd/thesis/doc"<CR>
-noremap <silent> <leader>bp :w<CR>:Start! latexmk -pdf -pdflatex="lualatex" C:/Users/mdg/repos/phd/thesis/present/document.tex<CR>
-noremap <silent> <leader>bf :w<CR>:Make figs -j 3 -C "C:/Users/mdg/repos/phd/thesis/doc"<CR>
+noremap <silent> <leader>ba :w<CR>:!cls & latexmk -pdf -pdflatex="lualatex" %<CR>
+" noremap <silent> <leader>bt :w<CR>:Make -C "C:/Users/mdg/repos/phd/thesis/doc"<CR>
+" noremap <silent> <leader>bp :w<CR>:Start! latexmk -pdf -pdflatex="lualatex" C:/Users/mdg/repos/phd/thesis/present/document.tex<CR>
+" noremap <silent> <leader>bf :w<CR>:Make figs -j 3 -C "C:/Users/mdg/repos/phd/thesis/doc"<CR>
 noremap <silent> <leader>op :Dispatch SumatraPDF %:r.pdf<CR>
 noremap <silent> <leader>ot :Dispatch SumatraPDF "C:/Users/mdg/repos/phd/thesis/doc/thesis.pdf"<CR>
 noremap <silent> <leader>ol :e %:r.log<CR>
