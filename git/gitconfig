@@ -4,30 +4,38 @@
 [push]
 	default = simple
 [core]
-	excludesfile = c:/Users/mdg/.gitignore_global
-   	symlinks = false
+	excludesfile = C:/Users/MattGibson/.gitignore_global
+	symlinks = false
 	autocrlf = false
+	fscache = true
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	interactive = true
 [alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    lg = log -p
-    wdiff = diff --color-words
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	wdiff = diff --color-words
 [pack]
 	packSizeLimit = 2g
 [help]
 	format = html
 [http]
-	sslCAinfo = C:/msys32/usr/ssl/certs/ca-bundle.trust.crt
-
+	sslCAinfo = C:/Program Files/Git/usr/ssl/certs/ca-bundle.trust.crt
 [diff "astextplain"]
 	textconv = astextplain
 [rebase]
 	autosquash = true
+[merge]
+	tool = vimdiff 
+[diff]
+    tool = vimdiff
+	guitool = gvimdiff
+[winUpdater]
+	recentlySeenVersion = 2.18.0.windows.1
