@@ -28,7 +28,7 @@
 # You can also deploy your own backend outside of matplotlib by
 # referring to the module name (which must be in the PYTHONPATH) as
 # 'module://my_backend'
-# backend      : WXAgg
+# backend      : Qt4Agg
 
 # If you are using the Qt4Agg backend, you can choose here
 # to use the PyQt4 bindings or the newer PySide bindings to
@@ -139,7 +139,7 @@ font.serif          : ['Computer Modern Roman']#,Bitstream Vera Serif, New Centu
 #text.color          : black
 
 ### LaTeX customizations. See http://www.scipy.org/Wiki/Cookbook/Matplotlib/UsingTex
-text.usetex         : True  # use latex for all text handling. The following fonts
+text.usetex         : False  # use latex for all text handling. The following fonts
                               # are supported through the usual rc parameter settings:
                               # new century schoolbook, bookman, times, palatino,
                               # zapf chancery, charter, serif, sans-serif, helvetica,
@@ -219,7 +219,7 @@ axes.formatter.limits : -3, 3 # use scientific notation if log10
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hypen.  See
                                # http://en.wikipedia.org/wiki/Plus_sign
-axes.color_cycle    : 1b9e77,d95f02,7570b3,e7298a,66a61e,e6ab02,a6761d
+axes.prop_cycle    : cycler('color', ['1b9e77','d95f02','7570b3','e7298a','66a61e','e6ab02','a6761d']) 
 					  #b, g, r, c, m, y, k  # color cycle for plot lines
                                             # as list of string colorspecs:
                                             # single letter, long name, or
@@ -277,7 +277,7 @@ legend.fontsize      : 9.0 #large
 
 ### FIGURE
 # See http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure
-figure.figsize   : 11, 8.5    # figure size in inches
+figure.figsize   : 5,5    # figure size in inches
 figure.dpi       : 100      # figure dots per inch
 #figure.facecolor : 0.75    # figure facecolor; 0.75 is scalar gray
 #figure.edgecolor : white   # figure edgecolor
@@ -355,7 +355,7 @@ ps.usedistiller   : ghostscript    # can be: None, ghostscript or xpdf
 
 #pgf backend params
 pgf.rcfonts	: False
-pgf.texsystem : xelatex
+pgf.texsystem : lualatex
 
 # svg backend params
 #svg.image_inline : True       # write raster image data directly into the svg file
