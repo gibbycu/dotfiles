@@ -38,3 +38,6 @@
 [submodule "vim/vimfiles/bundle/YouCompleteMe"]
 	path = vim/vimfiles/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/vimfiles/bundle/vim-dispatch"]
+	path = vim/vimfiles/bundle/vim-dispatch
+	url = git@github.com:tpope/vim-dispatch.git
