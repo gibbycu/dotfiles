@@ -48,8 +48,10 @@ if [[ $CYG_SYS_BASHRC = "1" || $MSYSTEM = "MSYS" ]]; then
     fi
 
 # Load cool command prompt
+echo 'Loading Custom Command Prompt'
 source ~/dotfiles/bash/source/command_prompt.sh
 
 # ssh-agent script
+echo 'Checking ssh-agent'
 source ~/dotfiles/bash/source/sshag.sh 
 sshag

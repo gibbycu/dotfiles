@@ -22,20 +22,20 @@ function sshag_testsocket {
         return 2
     fi
 
-    # mdg commented out for same reason above
-    #if [ -b $SSH_AUTH_SOCK ] ; then
+    if [ -S $SSH_AUTH_SOCK ] ; then
         ssh-add -l > /dev/null
         if [ $? = 2 ] ; then
             echo "Socket $SSH_AUTH_SOCK is dead!  Deleting!" >&2
             rm -f $SSH_AUTH_SOCK
             return 4
         else
+            echo "Found ssh-agent $SSH_AUTH_SOCK"
             return 0
         fi
-    #else
-    #   echo "$SSH_AUTH_SOCK is not a socket!" >&2
-    #   return 3
-    #fi
+    else
+      echo "$SSH_AUTH_SOCK is not a socket!" >&2
+      return 3
+    fi
 }
 
 function sshag_init {
