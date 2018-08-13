@@ -1,30 +1,30 @@
-rem del c:\Users\mdg\.bashrc
-rem mklink c:\Users\mdg\.bashrc c:\Users\mdg\dotfiles\bash\bashrc
+rem del c:\Users\MattGibson\.bashrc
+rem mklink c:\Users\MattGibson\.bashrc c:\Users\MattGibson\dotfiles\bash\bashrc
 
-rem del c:\Users\mdg\.profile
-rem mklink c:\Users\mdg\.profile c:\Users\mdg\dotfiles\bash\bashrc
+rem del c:\Users\MattGibson\.profile
+rem mklink c:\Users\MattGibson\.profile c:\Users\MattGibson\dotfiles\bash\bashrc
 
-del c:\Users\mdg\.bash_login
-mklink c:\Users\mdg\.bash_login c:\Users\mdg\dotfiles\bash\bashrc
+del c:\Users\MattGibson\.bash_login
+mklink c:\Users\MattGibson\.bash_login c:\Users\MattGibson\dotfiles\bash\bashrc
 
-del c:\Users\mdg\.gitconfig
-mklink c:\Users\mdg\.gitconfig c:\Users\mdg\dotfiles\git\gitconfig
+del c:\Users\MattGibson\.gitconfig
+mklink c:\Users\MattGibson\.gitconfig c:\Users\MattGibson\dotfiles\git\gitconfig
 
-del c:\Users\mdg\.gitignore_global
-mklink c:\Users\mdg\.gitignore_global c:\Users\mdg\dotfiles\git\gitignore
+del c:\Users\MattGibson\.gitignore_global
+mklink c:\Users\MattGibson\.gitignore_global c:\Users\MattGibson\dotfiles\git\gitignore
 
-del c:\Users\mdg\.matplotlib\matplotlibrc
-mklink c:\Users\mdg\.matplotlib\matplotlibrc c:\Users\mdg\dotfiles\matplotlib\matplotlibrc
+del c:\Users\MattGibson\.matplotlib\matplotlibrc
+mklink c:\Users\MattGibson\.matplotlib\matplotlibrc c:\Users\MattGibson\dotfiles\matplotlib\matplotlibrc
 
-del c:\Users\mdg\_vimrc
-mklink c:\Users\mdg\_vimrc c:\Users\mdg\dotfiles\vim\vimrc
+del c:\Users\MattGibson\_vimrc
+mklink c:\Users\MattGibson\_vimrc c:\Users\MattGibson\dotfiles\vim\vimrc
 
-rmdir c:\Users\mdg\vimfiles
-mklink /d c:\Users\mdg\vimfiles c:\Users\mdg\dotfiles\vim\vimfiles
+rmdir c:\Users\MattGibson\vimfiles
+mklink /d c:\Users\MattGibson\vimfiles c:\Users\MattGibson\dotfiles\vim\vimfiles
 
-rmdir c:\cygwin\home\MDG
-mklink /d c:\cygwin\home\MDG c:\Users\mdg
+REM rmdir c:\cygwin\home\MattGibson
+REM mklink /d c:\cygwin\home\MattGibson c:\Users\MattGibson
 
-rmdir c:\msys32\home\MDG
-mklink /d c:\msys32\home\MDG c:\Users\mdg
+REM rmdir c:\msys32\home\MattGibson
+REM mklink /d c:\msys32\home\MattGibson c:\Users\MattGibson
 pause
