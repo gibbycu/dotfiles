@@ -35,3 +35,6 @@
 [submodule "vim/vimfiles/bundle/vim-fish"]
 	path = vim/vimfiles/bundle/vim-fish
 	url = git@github.com:gibbycu/vim-fish.git
+[submodule "vim/vimfiles/bundle/YouCompleteMe"]
+	path = vim/vimfiles/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
